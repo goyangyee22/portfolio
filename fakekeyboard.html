@@ -7,7 +7,7 @@
     <title>fake keyboard portfolio</title>
   </head>
   <body>
-    <h1>KEYBOARD</h1>
+    <h1>YOU CAN TEST KEYBOARD INPUT</h1>
     <input
       type="text"
       id="my-input"
@@ -129,8 +129,12 @@
         </div>
       </div>
     </div>
+    <button onclick="reset()">초기화</button>
   </body>
   <script>
+    function reset(){
+        
+    }
     const myInput = document.getElementById("my-input");
     const keydown = document.getElementById("keydown");
     const keypress = document.getElementById("keypress");
@@ -152,7 +156,9 @@
       // 일부 기능들을 제한합니다.
       if (
         e.code == "F1" ||
+        e.code == "F2" ||
         e.code == "F3" ||
+        e.code == "F4" ||
         e.code == "F5" ||
         e.code == "F6" ||
         e.code == "F7" ||

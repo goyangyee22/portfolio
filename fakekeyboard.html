@@ -8,7 +8,11 @@
   </head>
   <body>
     <h1>KEYBOARD</h1>
-    <input type="text" id="my-input" />
+    <input
+      type="text"
+      id="my-input"
+      placeholder="기능이 포함되어 있는 key들은 기능을 차단시켜 두어 그러한 키들은 keypress를 하여도 keypress에 초록불이 들어오지 않습니다."
+    />
     <div class="events">
       <div id="keydown" class="event">keydown</div>
       <div id="keypress" class="event">keypress</div>
@@ -135,7 +139,10 @@
     const code = document.getElementById("code");
 
     function presskeyEvent() {
+      // 키를 누를 때 check 클래스를 추가합니다.
       keypress.classList.add("check");
+
+      // 키를 누르는 것이 종료 되었을 때 check 클래스를 0.3초후에 제거합니다.
       setTimeout(function () {
         keypress.classList.remove("check");
       }, 300);
@@ -160,6 +167,13 @@
       const el = document.querySelector(`#${e.code}`);
       console.log(`key: ${e.key}, code: ${e.code}`);
 
+      // 외부 파일에 대한 엘리먼트 접근
+      colorArr = [];
+      for(let i = 0; i < 3; i++){
+        colorArr.push(parseInt(Math.random()*256));
+      }
+      el.style.setProperty('--main-color', `rgb(${colorArr})`);
+
       // keydown 요소에 check 클래스를 추가합니다.
       keydown.classList.add("check");
 
@@ -167,8 +181,8 @@
       el.classList.add("on");
 
       // 눌린 키의 "key"와 "code" 프로퍼티 값을 화면에 표시합니다.
-      key.innerHTML = `key: ${e.key}`;
-      code.innerHTML = `code: ${e.code}`;
+      key.innerHTML = `${e.key}`;
+      code.innerHTML = `${e.code}`;
 
       // check 클래스를 0.3초 이후에 제거합니다.
       setTimeout(function () {
@@ -189,6 +203,14 @@
       setTimeout(function () {
         keyup.classList.remove("check");
       }, 300);
+
+      if (e.code == "AltRight") {
+        // on 클래스 추가했다가 0.3초 뒤에 제거
+        el.classList.add("on");
+        setTimeout(function () {
+          el.classList.remove("on");
+        }, 300);
+      }
     }
 
     myInput.addEventListener("keypress", presskeyEvent);

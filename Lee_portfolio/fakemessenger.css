@@ -48,6 +48,7 @@ body {
 .username {
   margin: 0 0 3px;
   font-size: 16px;
+  font-weight: 1000;
 }
 
 .status {

@@ -26,16 +26,21 @@ body{
     background-color: white;
 }
 
+.btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .header{
     display: flex;
     height: 60px;
     padding: 12px 5px 8px;
 }
 
-.btn{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+.info-block{
+    margin-left: 12px;
+    margin-right: 80px;
 }
 
 .username{
@@ -55,7 +60,7 @@ body{
     justify-content: space-between;
 }
 
-.chat-box{
+#chat-box{
     height: 400px;
     padding: 12px 10px;
     overflow: auto;
@@ -64,7 +69,7 @@ body{
 }
 
 .bubble{
-    margin : 5px 0;
+    margin: 5px 0;
     max-width: 300px;
     font-size: 14px;
     width: max-content;
@@ -72,16 +77,18 @@ body{
 
 .friend-bubble{
     background-color: #f3f0f5;
-    color: #8f00fe;
-    border-radius: 15px 15px 15px 0;
+    border-radius: 14px 14px 14px 0;
     padding: 7px 15px;
+    color: #8f00fe;
 }
 
 .my-bubble{
     background-color: #8f00fe;
-    background-color: #f3f0f5;
-    border-radius: 15px 15px 0 15px;
+    border-radius: 14px 14px 0 14px;
     padding: 7px 15px;
+    color: #f3f0f5;
+    /* margin-left: auto; */
+    align-self: flex-end;
 }
 
 .footer{
@@ -90,7 +97,7 @@ body{
     align-items: flex-end;
     padding: 10px;
     width: 100%;
-    height: 80%;
+    height: 80px;
 }
 
 #input{

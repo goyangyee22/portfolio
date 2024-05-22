@@ -169,17 +169,16 @@
       const el = document.querySelector(`#${e.code}`);
       console.log(`key: ${e.key}, code: ${e.code}`);
 
-
       // 외부 파일에 대한 엘리먼트 접근
       colorArr = [];
-      for(let i = 0; i < 3; i++){
-        colorArr.push(parseInt(Math.random()*256));
+      for (let i = 0; i < 3; i++) {
+        colorArr.push(parseInt(Math.random() * 256));
       }
-      el.style.setProperty('--main-color', `rgb(${colorArr})`);
+      el.style.setProperty("--main-color", `rgb(${colorArr})`);
 
       luma = 0.2126 * colorArr[0] + 0.7152 * colorArr[1] + 0.0722 * colorArr[2];
       el.style.color = luma <= 155 ? "white" : "black";
-      el.style.setProperty('--font-color', `luma`);
+      el.style.setProperty("--font-color", `luma`);
 
       // keydown 요소에 check 클래스를 추가합니다.
       keydown.classList.add("check");
@@ -206,7 +205,9 @@
 
       // 손가락을 뗀 키를 화면상에서 다시 원상복구 시킵니다.
       el.classList.remove("on");
-      el.style.color = 'black'
+
+      // 이 때 손가락을 떼었을 때, luma값에 의하여 글자 색깔이 변하였어도 키를 떼었을 때는 기본 값인 black으로 설정합니다.
+      el.style.color = "black";
 
       setTimeout(function () {
         keyup.classList.remove("check");

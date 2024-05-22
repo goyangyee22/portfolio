@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Lee_portfolio/fakemessenger.css" />
+    <title>fake messenger</title>
+  </head>
+  <body>
+    <img
+      class="background"
+      src="../resources/img/portfolio_background.png"
+    />
+
+    <!-- header : 상대방 정보 표시 및 전화(음성, 영상)통화 버튼 -->
+    <div class="container">
+      <div class="header">
+        <button class="btn">
+          <img
+            src="../resources/img/portfolio_left-arrow.png"
+            width="30"
+            hekght="30"
+          />
+        </button>
+        <img
+          src="../resources/img/portfolio_profile.png"
+          width="40"
+          height="40"
+        />
+        <div class="info-block">
+          <p class="username">김찬호</p>
+          <p class="status">1시간 전에 활동</p>
+        </div>
+        <div class="call-box">
+          <button class="btn">
+            <img
+              src="../resources/img/portfolio_phone-call.png"
+              width="20"
+              height="20"
+            />
+          </button>
+          <button class="btn">
+            <img
+              src="../resources/img/portfolio_video-call.png"
+              width="20"
+              height="20"
+            />
+          </button>
+        </div>
+      </div>
+
+      <!-- 대화내용 표시부 -->
+      <div id="chat-box">
+        <div class="bubble friend-bubble">불편해?</div>
+        <div class="bubble friend-bubble">제육 좀 볶아온나.</div>
+      </div>
+
+      <!-- 대화 작성부 -->
+      <div class="footer">
+        <textarea id="input" placeholder="메세지를 입력하세요."></textarea>
+        <button class="btn" id="sendBtn">
+          <img
+            src="../portfolio/resources/img/portfolio_send.png"
+            width="24"
+            height="24"
+          />
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    // textarea 요소, button 요소, chat-box 요소
+    const chatBox = document.querySelector("#chat-box");
+    const input = document.querySelector("#input");
+    const send = document.querySelector("sendBtn");
+
+    function sendMyText() {
+      // 작성된 메세지를 가져옵니다.
+      const newMessage = input.value;
+
+      // 문자열이 공백이면 메세지를 출력하지 않습니다.
+      if (newMessage.length == 0) {
+        return false;
+      }
+
+      // 문자열이 공백일 시 공백 생성 및 문자열이 개행일 시 개행을 합니다.
+      let changeMessage = newMessage.replaceAll(" ", "&nbsp;");
+      changeMessage = newMessage.replaceAll("\n", "<br>");
+
+      // 메세지를 담을 div를 만듭니다.
+      const div = document.createElement("div");
+
+      // 만든 div에 메세지를 담습니다.
+      div.innerHTML = changeMessage;
+
+      // div에 클래스를 추가합니다.
+      div.classList.add("bubble", "my-bubble");
+
+      // chat-box에 div를 추가합니다.
+      chatBox.append(div);
+
+      // 입력된 문자열을 제거합니다.
+      input.value = "";
+    }
+
+    function sendMyTextByEnter(e) {
+      // Enter를 눌렀을 때만 개행을 되지 않게 하고 메세지를 보낸다.
+      if (e.key == "Enter" && !e.shiftKey) {
+        // shiftKey ==> false
+        sendMyText();
+        e.preventDefault();
+      }
+    }
+
+    send.addEventListener("click", sendMyText);
+    input.addEventListener("keypress", sendMyTextByEnter);
+  </script>
+</html>

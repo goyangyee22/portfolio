@@ -8,32 +8,21 @@
   </head>
   <body>
     <div class="wrapper">
-    <h1>안녕하세요. 프론트엔드 개발자 이재협입니다.</h1>
-    <h1>잘 부탁 드립니다.</h1>
-    <div id="main1">
-      <a
-        href="Lee_portfolio/fakekeyboard.html"
-        class="fillUpBtn"
-        target="_blank"
-        >TEST KEYBOARD INPUT</a
-      >
-      <a
-        href="Lee_portfolio/fakemessenger.html"
-        class="fillUpBtn"
-        target="_blank"
-        >MESSENGER</a
-      >
-      <a
-        href="https://goyangyee22.github.io/project/"
-        class="fillUpBtn"
-        target="_blank"
-        >Team project</a
-      >
-      <a href="#" class="fillUpBtn comingSoon">Coming soon</a>
+      <h1>안녕하세요. 프론트엔드 개발자 이재협입니다.</h1>
+      <h1>잘 부탁 드립니다.</h1>
+      <div id="main1">
+        <a href="Lee_portfolio/fakekeyboard.html" class="fillUpBtn" data-description="description1">TEST KEYBOARD INPUT</a>
+        <a href="Lee_portfolio/fakemessenger.html" class="fillUpBtn" data-description="description2">MESSENGER</a>
+        <a href="https://goyangyee22.github.io/project/" class="fillUpBtn" data-description="description3">Team project</a>
+        <a href="#" class="fillUpBtn comingSoon" data-description="description4">Coming soon</a>
+      </div>
+      <div id="main2">
+        <div id="description1" class="description">TEST KEYBOARD INPUT<br /><br />사용된 언어: html, css, javascript<br /><br />input 창에 마우스 커서를 클릭하고 밑의 키보드 그림에 나와있는 내용대로 입력을 하는 경우 그 키에 해당하는 자판 상자가 무작위의 색깔로 빛나고 input 창에 내용이 적힙니다. (다만 한글인 상태에서 입력하는 경우 keypress와 Process는 비활성화 욉니다.)</div>
+        <div id="description2" class="description">MESSENGER<br /><br />사용된 언어: html, css, javascript<br /><br />임의로 입력해둔 상대방의 메세지에 답장을 하면 나의 메세지가 화면에 표시되는 방식입니다. 페이지를 벗어나는 경우 나의 메세지는 초기화됩니다.</div>
+        <div id="description3" class="description">팀 프로젝트 - 빌리슈<br /><br />사용된 언어: html, css, javascript, firebase<br /><br />가상으로 구현한 방을 빌리는 사이트인 빌리슈입니다. 팀 프로젝트로 진행하였습니다. html, css, javascript같은 프론트엔드 언어 외에도 firebase를 이용하여 회원가입, 결제내역 등 데이터가 저장되는 서비스도 구현하였습니다.</div>
+        <div id="description4" class="description">comingSoon</div>
+      </div>
     </div>
-    <div id="main2">
-    </div>
-  </div>
+    <script src="./resources/js/index.js"></script>
   </body>
-  <script src="./resources/js/index.js"></script>
 </html>

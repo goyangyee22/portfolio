@@ -1,50 +1,46 @@
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ./resources/css/index.css */
+body {
+  font-family: Arial, sans-serif;
 }
-a {
-  display: inline-block;
-  font-size: 20px;
-  text-decoration-line: none;
-  font-weight: 600;
-  color: #28598f;
-  padding: 8px;
-  border-radius: 6px;
-  transition: all 0.3s;
+
+.wrapper {
+  text-align: center;
 }
-a:visited {
-  text-decoration-line: none;
-  color: #28598f;
-}
-a:hover {
-  background-color: white;
-  color: #cf79e5;
-  font-size: 25px;
-}
-a:hover::before {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: 200%;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  transform: scaleY(1);
-  transition: 0.3s;
-}
-a:active {
-  color: #f8c;
-}
+
 #main1 {
+  margin-bottom: 20px;
+}
+
+.fillUpBtn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.fillUpBtn:hover {
+  background-color: #0056b3;
+}
+
+#main2 {
+  margin-top: 20px;
+  position: relative;
+  height: 100px; /* 설명이 보일 공간을 설정합니다. 필요에 따라 조정 */
+}
+
+.description {
+  display: none; /* 기본적으로 숨겨놓기 */
   position: absolute;
-  width: 100%;
-  height: 70px;
-  margin: 0;
-  padding: 0;
-  background-color: aquamarine;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
